@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  pool: 5
+
+development:
+  <<: *default
+  database: acapp-dev
+
+test: &test
+  <<: *default
+  database: acapp-test
+
+production:
+  <<: *default
+  database: acapp-production
+
+cucumber:
+  <<: *test
